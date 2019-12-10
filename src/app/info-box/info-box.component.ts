@@ -6,11 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./info-box.component.css']
 })
 export class InfoBoxComponent implements OnInit {
-  @Input() message;
+  @Input() signupTitle = 'Sign up for our newsletter';
+  @Input() thankyouMessage = 'Thanks!';
+
+  formData = { name: '', email: '' };
+  formSubmitted = false;
 
   constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onSubmit() {
+    this.formSubmitted = true;
   }
 
 }
